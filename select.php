@@ -11,7 +11,7 @@ sschk();
 
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 
-$stmt = $pdo->prepare("SELECT * FROM gs_english_table WHERE name LIKE :search OR english LIKE :search OR japanese LIKE :search OR comment LIKE :search");
+$stmt = $pdo->prepare("SELECT * FROM gs_englishplus_table WHERE name LIKE :search OR english LIKE :search OR japanese LIKE :search OR comment LIKE :search");
 $stmt->bindValue(':search', '%' .$search . '%', PDO::PARAM_STR);
 $status = $stmt->execute();
 
